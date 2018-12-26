@@ -28,7 +28,7 @@ node{
    	def uploadSpec = """{
      "files": [
            {
-              "pattern": "/var/lib/jenkins/workspace/artifactory-dep-project/target/*.war",
+              "pattern": "/var/lib/jenkins/workspace/CourseApi-Pipeline/target/*.war",
               "target": "mayank-snapshot"
            }
         ]
