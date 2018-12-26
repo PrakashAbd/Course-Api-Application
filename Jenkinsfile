@@ -51,7 +51,7 @@ node{
     }
     
     stage ('Final deploy'){
-        sh 'scp /var/lib/jenkins/warFiles/z12345.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
+        sh 'scp -v -o StrictHostKeyChecking=no /var/lib/jenkins/warFiles/z12345.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
     }
     
 	stage('Email Notification'){
