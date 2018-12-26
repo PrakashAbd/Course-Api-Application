@@ -50,9 +50,9 @@ node{
     server.download(downloadSpec)
     }
     
-    /*stage ('Final deploy'){
-        sh 'scp /var/lib/jenkins/warFiles/myweb-0.0.5.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
-    }*/
+    stage ('Final deploy'){
+        sh 'scp /var/lib/jenkins/warFiles/myweb-0.0.5.war minduser@deployment-vm.eastus.cloudapp.azure.com:/opt/apache-tomcat-8.5.37/webapps'
+    }
     
 	stage('Email Notification'){
 		mail bcc: '', body: '''Hi!
