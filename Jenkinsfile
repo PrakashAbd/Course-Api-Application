@@ -28,7 +28,7 @@ node{
    	def uploadSpec = """{
      "files": [
            {
-              "pattern": "/var/lib/jenkins/workspace/CourseApi-Pipeline/target/*.war",
+              "pattern": "/var/lib/jenkins/workspace/CourseApi-Pipeline/target/*.jar",
               "target": "mayank-snapshot"
            }
         ]
