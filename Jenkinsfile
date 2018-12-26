@@ -42,7 +42,7 @@ node{
         def downloadSpec="""{
         "files":[
         {
-           "pattern":"mayank-snapshot/z12345.war",
+           "pattern":"mayank-snapshot/myweb-0.0.5.war",
             "target":"/var/lib/jenkins/warFiles/"
         }
         ]
@@ -51,7 +51,7 @@ node{
     }
     
     stage ('Final deploy'){
-        sh 'scp /var/lib/jenkins/warFiles/z12345.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
+        sh 'scp /var/lib/jenkins/warFiles/myweb-0.0.5.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
     }
     
 	stage('Email Notification'){
