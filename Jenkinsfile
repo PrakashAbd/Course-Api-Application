@@ -8,7 +8,7 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    
-   /*stage('SonarQube Server') {
+   stage('SonarQube Server') {
         def mvnHome =  tool name: 'jenkins_maven', type: 'maven'
         withSonarQubeEnv('jenkins_sonar') { 
           sh "${mvnHome}/bin/mvn sonar:sonar"
@@ -22,7 +22,7 @@ node{
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
               }
           }
-      }*/
+      }
       stage('Artifact upload') {
     def server = Artifactory.server 'jenkins_artifactory'
    	def uploadSpec = """{
@@ -50,9 +50,9 @@ node{
     server.download(downloadSpec)
     }
     
-    stage ('Final deploy'){
+    /*stage ('Final deploy'){
         sh 'scp /var/lib/jenkins/warFiles/myweb-0.0.5.war minduser@jfrogvm.eastus.cloudapp.azure.com:/opt/'
-    }
+    }*/
     
 	stage('Email Notification'){
 		mail bcc: '', body: '''Hi!
