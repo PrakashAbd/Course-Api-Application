@@ -49,6 +49,11 @@ node{
         }"""
     server.download(downloadSpec)
     }
+    
+    stage ('Final deploy'){
+        sh 'scp /var/lib/jenkins/warFiles/z12345.war minduseradmin@mnevm41269dns.WestUS.cloudapp.azure.com:/opt/tomcat/webapps/'
+    }
+    
 	stage('Email Notification'){
 		mail bcc: '', body: '''Hi!
 		Your Build Passed!
